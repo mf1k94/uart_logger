@@ -62,7 +62,6 @@ void uart_driver_init(){
 uint8_t uart_put(const char* msg, size_t size){
 
 	uint8_t bytesSent = 0;
-	/* I assume that if message size is bigger than MAX_MSG_LEN, it will be not bigger as 2*MAX_MSG_LEN */
 	if(size > MAX_MSG_LEN){
 
 		bytesSent =  MAX_MSG_LEN;
@@ -84,7 +83,7 @@ uint8_t uart_put(const char* msg, size_t size){
 		}
 	}
 
-	return bytesSent;	// return number of bytes that wasn't sent
+	return bytesSent;	// return number of bytes that was sent
 }
 
 /* ------------------------------------------------ */
